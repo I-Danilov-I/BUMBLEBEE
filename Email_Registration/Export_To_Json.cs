@@ -56,7 +56,7 @@ namespace BUMBLEBEE
             }
             catch (Exception ex)
             {
-                Tools.Print(ex.Message, ConsoleColor.Red);
+                Console.WriteLine(ex.Message, ConsoleColor.Red);
             }
             return folder_name;
         }

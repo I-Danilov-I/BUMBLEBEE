@@ -1,37 +1,34 @@
-﻿/*
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
-
-namespace BUBLEBEE
+namespace BUMBLEBEE
 {
     internal class Google_Operations
     {
-        public static bool Login(IWebDriver driver, string userEmail, string password)
+        public static bool Login(Brwoser_Control browser, string userEmail, string password)
         {
             try
             {
-                driver.Navigate().GoToUrl("https://www.google.de/");
-
-                IWebElement? buttonLogin = Tools.Wait(driver, By.XPath("//span[text()='Anmelden']"), "Login");
+                browser.OpenUrl("https://www.google.de/");
+                IWebElement? buttonLogin = browser.FindWaitElement("//a[@aria-label='Anmelden']");
                 buttonLogin?.Click();
 
-                IWebElement? loginMail = Tools.Wait(driver, By.Id("identifierId"), "E-Mail input");
+                IWebElement? loginMail = browser.FindWaitElement("identifierId");
                 loginMail?.SendKeys(userEmail);
                 loginMail?.SendKeys(Keys.Enter);
 
-                Tools.RandomSleep(10, 20);
-                IWebElement? loginPassword = Tools.Wait(driver, By.Name("Passwd"), "Passwort input");
+
+                IWebElement? loginPassword = browser.FindWaitElement("Passwd");
                 loginPassword?.SendKeys(password);
                 loginPassword?.SendKeys(Keys.Enter);
 
                 try
                 {
-                    IWebElement? nichtJetzt = Tools.Wait(driver, By.XPath("//span[text()='Nicht jetzt']"), "Nicht Jetzt");
+                    IWebElement? nichtJetzt = browser.FindWaitElement("Nicht jetzt");
                     nichtJetzt?.Click();
                 }
                 catch { }
 
-                IWebElement? checkLogin = Tools.Wait(driver, By.CssSelector("a[aria-label*='Google-Konto']"), "Check Login");
+                IWebElement? checkLogin = browser.FindWaitElement("a[aria-label*='Google-Konto']");
                 if (checkLogin != null)
                 {
                     Thread.Sleep(1000);
@@ -52,10 +49,9 @@ namespace BUBLEBEE
             }
             catch (Exception ex)
             {
-                Tools.Print($"[LOG]> {ex.Message}", ConsoleColor.Red);
+                Console.WriteLine($"[LOG]> {ex.Message}");
                 return false;
             }
         }
     }
 }
-*/

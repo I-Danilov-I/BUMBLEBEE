@@ -24,8 +24,12 @@ namespace BUMBLEBEE
             chromeOptions.AddArgument("--disk-cache-size=0");
             chromeOptions.AddArgument("--window-size=1920,1080");
             chromeOptions.AddArgument("--start-maximized");
-            chromeOptions.AddExtension(Tools.GetCurretPath("01_Extensions\\disableCookies.crx"));
-            chromeOptions.AddExtension(Tools.GetCurretPath("01_Extensions\\adguard.crx"));
+
+            // Ermittlung des aktuellen Pfads und Hinzufügen der Erweiterungen
+            string currentPath = Path.Combine(Directory.GetCurrentDirectory().Replace("bin\\Debug\\net8.0", ""), "01_Extensions");
+            chromeOptions.AddExtension(Path.Combine(currentPath, "disableCookies.crx"));
+            chromeOptions.AddExtension(Path.Combine(currentPath, "adguard.crx"));
+
             webDriver = new ChromeDriver(chromeOptions);
             SwitchToFirstTabAndCloseOthers();
         }
@@ -159,7 +163,7 @@ namespace BUMBLEBEE
             }
             catch (Exception ex)
             {
-                Tools.Print($"[LOG]> {ex.Message}", ConsoleColor.Red);
+                Console.WriteLine($"[LOG]> {ex.Message}", ConsoleColor.Red);
             }
         }
 

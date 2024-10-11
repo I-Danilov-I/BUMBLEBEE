@@ -5,9 +5,7 @@
         private static void Main()
         {
             Brwoser_Control BC = new();
-            Email_Registration.Run(BC);
-            Odnoklasniki OK = new("maxmustermann@gmail.com", "123passefreregdg");
-            OK.Run(BC);
+            Google_Operations.Login(BC, "kredobeats@gmail.com", "tolibasik-77");
         }
     }
 }
