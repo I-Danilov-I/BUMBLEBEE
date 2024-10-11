@@ -21,10 +21,9 @@ namespace BUMBLEBEE.RuTube
             loginContinieButton?.Click();
 
             string code = ReadEmailCode.GetCodeFromEmail(BC);
-            
-            // Speichere den Handle des ersten Tabs (oder verwende WindowHandles[0] für den ersten Tab)
-            string firstTabHandle = BC.getWebDriver().WindowHandles[0];       
-            BC.getWebDriver().SwitchTo().Window(firstTabHandle);    // Wechsel zurück zum ersten Tab
+                     
+            string firstTabHandle = BC.getWebDriver().WindowHandles[0];        // Speichere den Handle des ersten Tabs (oder verwende WindowHandles[0] für den ersten Tab)
+            BC.getWebDriver().SwitchTo().Window(firstTabHandle);               // Wechsel zurück zum ersten Tab
 
             BC.getWebDriver().SwitchTo().Frame(iframe); // Welche du dem Frame
 
