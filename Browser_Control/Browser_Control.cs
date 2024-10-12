@@ -4,13 +4,13 @@ using OpenQA.Selenium.Chrome;
 
 namespace BUMBLEBEE
 {
-    internal class Brwoser_Control
+    internal class Browser_Control
     {
         internal IWebDriver webDriver;
         internal ChromeOptions chromeOptions;
 
 
-        internal Brwoser_Control()
+        internal Browser_Control()
         {
             chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--log-level=3");

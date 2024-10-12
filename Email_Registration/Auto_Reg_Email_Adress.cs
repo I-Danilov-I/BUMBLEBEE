@@ -5,7 +5,7 @@ namespace BUMBLEBEE
 {
     internal static class Email_Registration
     {
-        internal static void Run(Brwoser_Control BC)
+        internal static void Run(Browser_Control BC)
         {
             BC.OpenUrl("https://app.tuta.com/");
             BC.SwitchToFirstTabAndCloseOthers();

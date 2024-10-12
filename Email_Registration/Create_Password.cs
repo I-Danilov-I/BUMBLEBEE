@@ -13,7 +13,7 @@ namespace BUMBLEBEE
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        internal static string Create(Brwoser_Control BC)
+        internal static string Create(Browser_Control BC)
         {
             string password = GenerateRandomPassword(12); // Generiere ein zufälliges Passwort mit 12 Zeichen
 

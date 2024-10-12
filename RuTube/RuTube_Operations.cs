@@ -4,8 +4,9 @@ namespace BUMBLEBEE.RuTube
 {
     internal class RuTube_Operations
     {
-        internal static void Login(Brwoser_Control BC)
+        internal static void Login(Browser_Control BC)
         {
+
             BC.OpenUrl("https://rutube.ru/");
 
             IWebElement? loginButton = BC.FindWaitElement("//button[.//span[text()='Вход и регистрация']]");
@@ -19,6 +20,7 @@ namespace BUMBLEBEE.RuTube
 
             IWebElement? loginContinieButton = BC.FindWaitElement("submit-login-continue");
             loginContinieButton?.Click();
+            Thread.Sleep(3000);
 
             string code = ReadEmailCode.GetCodeFromEmail(BC);
                      

@@ -4,7 +4,7 @@ namespace BUMBLEBEE
 {
     internal class Create_Email
     {
-        internal static string Create(Brwoser_Control BC)
+        internal static string Create(Browser_Control BC)
         {
             int stringLong = 1;
             int count = 0;

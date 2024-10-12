@@ -14,20 +14,20 @@
             this.user_password = user_password;
         }
 
-        internal void Run(Brwoser_Control BC)
+        internal void Run(Browser_Control BC)
         {
             Login(BC);
             Navigate(BC);
         }
 
-        private void Login(Brwoser_Control BC)
+        private void Login(Browser_Control BC)
         {
             try {BC.OpenUrl(url); }catch (Exception ex){Console.WriteLine(ex.Message);}
             try {BC.FindWaitElement("field_email")?.SendKeys(user_email); }catch (Exception ex){Console.WriteLine(ex.Message);}
             try {BC.FindWaitElement("field_password")?.SendKeys(user_password); }catch(Exception ex) { Console.WriteLine(ex.Message);}
         }
 
-        private void Navigate(Brwoser_Control BC)
+        private void Navigate(Browser_Control BC)
         {
             try { BC.FindWaitElement("   ")?.SendKeys(user_email); } catch (Exception ex) { Console.WriteLine(ex.Message); }
             try { BC.FindWaitElement("   ")?.SendKeys(user_password); } catch (Exception ex) { Console.WriteLine(ex.Message); }

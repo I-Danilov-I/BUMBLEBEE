@@ -4,7 +4,7 @@ namespace BUMBLEBEE
 {
     internal class Google_Operations
     {
-        public static bool Login(Brwoser_Control browser, string userEmail, string password)
+        public static bool Login(Browser_Control browser, string userEmail, string password)
         {
             try
             {
