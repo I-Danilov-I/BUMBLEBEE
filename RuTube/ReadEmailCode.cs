@@ -7,7 +7,7 @@ namespace BUMBLEBEE
         internal static string GetCodeFromEmail(Browser_Control BC)
         {
             BC.getWebDriver().SwitchTo().NewWindow(WindowType.Tab);
-            Google_Operations.Login(BC, "kredobeats@gmail.com", "tolibasik-77");
+            Google_Login.Login(BC, "kredobeats@gmail.com", "tolibasik-77");
             IWebDriver webdriver = BC.getWebDriver();
 
             BC.OpenUrl("https://mail.google.com/");         
@@ -17,7 +17,7 @@ namespace BUMBLEBEE
                 Console.WriteLine("Tabelle nicht gefunden!");
                 return null!;
             }
-
+            Thread.Sleep(10000);
             IList<IWebElement> emailListe = emailTabelle.FindElements(By.XPath("//tr[@role='row']"));
             foreach(IWebElement mail in emailListe)
             {

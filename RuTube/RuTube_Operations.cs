@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace BUMBLEBEE.RuTube
+namespace BUMBLEBEE
 {
     internal class RuTube_Operations
     {
@@ -20,15 +20,15 @@ namespace BUMBLEBEE.RuTube
 
             IWebElement? loginContinieButton = BC.FindWaitElement("submit-login-continue");
             loginContinieButton?.Click();
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
 
             string code = ReadEmailCode.GetCodeFromEmail(BC);
                      
             string firstTabHandle = BC.getWebDriver().WindowHandles[0];        // Speichere den Handle des ersten Tabs (oder verwende WindowHandles[0] für den ersten Tab)
             BC.getWebDriver().SwitchTo().Window(firstTabHandle);               // Wechsel zurück zum ersten Tab
-
+            Thread.Sleep(3000);
             BC.getWebDriver().SwitchTo().Frame(iframe); // Welche du dem Frame
-
+      
             for (int i = 0; i < code.Length; i++)
             {
                 string inputName = i.ToString(); // "0", "1", "2", "3"
