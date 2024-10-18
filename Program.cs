@@ -1,4 +1,6 @@
-﻿namespace BUMBLEBEE
+﻿using BUMBLEBEE.WOSurvivor;
+
+namespace BUMBLEBEE
 {
     internal static class Program
     {
