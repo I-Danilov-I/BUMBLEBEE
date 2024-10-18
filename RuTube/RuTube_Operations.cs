@@ -13,7 +13,7 @@ namespace BUMBLEBEE
             loginButton?.Click();
 
             IWebElement? iframe = BC.FindWaitElement("snake-popup"); // Suche nach dem Frame i ndem sich das Input Feld befindet
-            BC.getWebDriver().SwitchTo().Frame(iframe); // Welche du dem Frame
+            BC.GetWebDriver().SwitchTo().Frame(iframe); // Welche du dem Frame
 
             IWebElement? emailInputField = BC.FindWaitElement("phone-or-email-login");
             emailInputField?.SendKeys("kredobeats@gmail.com");
@@ -24,10 +24,10 @@ namespace BUMBLEBEE
 
             string code = ReadEmailCode.GetCodeFromEmail(BC);
                      
-            string firstTabHandle = BC.getWebDriver().WindowHandles[0];        // Speichere den Handle des ersten Tabs (oder verwende WindowHandles[0] für den ersten Tab)
-            BC.getWebDriver().SwitchTo().Window(firstTabHandle);               // Wechsel zurück zum ersten Tab
+            string firstTabHandle = BC.GetWebDriver().WindowHandles[0];        // Speichere den Handle des ersten Tabs (oder verwende WindowHandles[0] für den ersten Tab)
+            BC.GetWebDriver().SwitchTo().Window(firstTabHandle);               // Wechsel zurück zum ersten Tab
             Thread.Sleep(3000);
-            BC.getWebDriver().SwitchTo().Frame(iframe); // Welche du dem Frame
+            BC.GetWebDriver().SwitchTo().Frame(iframe); // Welche du dem Frame
       
             for (int i = 0; i < code.Length; i++)
             {
@@ -36,7 +36,7 @@ namespace BUMBLEBEE
                 inputField?.SendKeys(code[i].ToString()); // Füge die entsprechende Zahl ein
             }
 
-            BC.getWebDriver().SwitchTo().DefaultContent(); // Zurück zu mHauptfenster wechseln
+            BC.GetWebDriver().SwitchTo().DefaultContent(); // Zurück zu mHauptfenster wechseln
 
         }
     }

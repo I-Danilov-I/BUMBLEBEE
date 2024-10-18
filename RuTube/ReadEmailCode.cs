@@ -6,9 +6,9 @@ namespace BUMBLEBEE
     {
         internal static string GetCodeFromEmail(Browser_Control BC)
         {
-            BC.getWebDriver().SwitchTo().NewWindow(WindowType.Tab);
+            BC.GetWebDriver().SwitchTo().NewWindow(WindowType.Tab);
             Google_Login.Login(BC, "kredobeats@gmail.com", "tolibasik-77");
-            IWebDriver webdriver = BC.getWebDriver();
+            IWebDriver webdriver = BC.GetWebDriver();
 
             BC.OpenUrl("https://mail.google.com/");         
             IWebElement? emailTabelle =  BC.FindWaitElement("//table[@role='grid']");

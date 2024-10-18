@@ -34,7 +34,7 @@ namespace BUMBLEBEE
             SwitchToFirstTabAndCloseOthers();
         }
 
-        internal IWebDriver getWebDriver()
+        internal IWebDriver GetWebDriver()
         {
             return webDriver;
         }
